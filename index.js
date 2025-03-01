@@ -19,6 +19,7 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions))
+app.use(express.json())
 
 const connectDB = async() => {
     try{
@@ -35,7 +36,7 @@ const connectDB = async() => {
 
 //Middleware
 dotenv.config()
-app.use(express.json)
+app.use(express.json())
 
 app.use("/images", express.static(path.join(__dirname, "/images")))
 console.log(cors());
